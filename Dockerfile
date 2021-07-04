@@ -53,11 +53,14 @@ RUN apt update \
 	dash \
 	qtpy \
 	tzlocal \
+	rqdatac \
 	&& rm -rf /tmp/ta-lib* \
 	&& apt purge -y build-essential wget\
 	&& apt-get clean autoclean \
 	&& apt-get autoremove -y \
-	&& rm -rf /var/lib/{apt,dpkg,cache,log}/
+	&& rm -rf /var/lib/{apt,dpkg,cache,log}/ \
+	&& ln -snf /usr/share/zoneinfo/Asian/Shanghai /etc/localtime \
+	&& echo Asian/Shanghai > /etc/timezone
 
 # finialize
 COPY copyables /
