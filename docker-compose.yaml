@@ -1,7 +1,7 @@
 version: "3"
 services:
   vnpy:
-    image: vnpy
+    image: asxzy/vnpy-vnc:latest
     container_name: vnpy
     ports:
       - "5900:5900"
