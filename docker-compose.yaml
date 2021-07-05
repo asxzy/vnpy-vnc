@@ -1,13 +1,14 @@
 version: "3"
 services:
   vnpy:
-    image: asxzy/vnpy-vnc:latest
+    image: vnpy
     container_name: vnpy
     ports:
       - "5900:5900"
       - "8050:8050"
     volumes:
       - "./vnpy:/vnpy"
+      - "./copyables/etc/supervisor/conf.d/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf"
       - "./simulator/config:/root/.vntrader"
       - "./simulator/log:/var/log"
     environment:
