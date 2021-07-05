@@ -17,8 +17,7 @@ RUN apt update \
 	libxkbcommon-x11-0 \
 	locales \
 	ttf-wqy-zenhei \
-	&& sed -i "s/# zh_CN GB18030/zh_CN GB18030/" /etc/locale.gen \
-	&& sed -i "s/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/" /etc/locale.gen \
+	&& sed -i "s/# zh_CN.GB18030 GB18030/zh_CN.GB18030 GB18030/" /etc/locale.gen \
 	&& locale-gen \
 	&& ln -s /usr/lib/x86_64-linux-gnu/libxcb-util.so.0 /usr/lib/x86_64-linux-gnu/libxcb-util.so.1 \
 	&& cd /tmp \
