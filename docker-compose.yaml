@@ -13,6 +13,7 @@ services:
       - "./simulator/log:/var/log"
     environment:
       NGINX_HOST: "${HOST}"
+      # VNC_PASSWORD: 123456
   mongo:
     image: "mongo:latest"
     container_name: vnpy-mongodb
