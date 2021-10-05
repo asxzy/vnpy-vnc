@@ -52,7 +52,6 @@ RUN apt update \
 	futu-api \
 	quickfix \
 	jqdatasdk \
-	dash \
 	qtpy \
 	tzlocal \
 	rqdatac \
@@ -63,6 +62,8 @@ RUN apt update \
 	&& rm -rf /var/lib/{apt,dpkg,cache,log}/ \
 	&& ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
 	&& echo Asia/Shanghai > /etc/timezone
+
+RUN pip install flask_login dash tzlocal==2.1
 
 # finialize
 COPY copyables /
